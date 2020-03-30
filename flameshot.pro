@@ -14,7 +14,7 @@ DEFINES += APP_VERSION=\\\"$$TAG_VERSION\\\"
 
 QT  += core gui widgets network svg
 
-unix:!macx {
+unix {
     QT  += dbus
 }
 
@@ -220,7 +220,7 @@ HEADERS  += src/widgets/capture/buttonhandler.h \
     src/tools/text/textconfig.h \
     src/widgets/panel/sidepanelwidget.h
 
-unix:!macx {
+unix {
     SOURCES += src/core/flameshotdbusadapter.cpp \
         src/utils/dbusutils.cpp
 
@@ -238,7 +238,7 @@ RESOURCES += \
     graphics.qrc
 
 # installs
-unix:!macx {
+unix {
     isEmpty(PREFIX) {
       packaging {
         PREFIX = /usr
