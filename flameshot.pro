@@ -287,5 +287,14 @@ unix {
         appdata
 }
 
+macx {
+    ICON = img/app/flameshot.icns
+    QMAKE_INFO_PLIST = macos/Info.plist
+
+    RESOURCE_FILES.files = $$ICON
+    RESOURCE_FILES.path = Contents/Resources
+    QMAKE_BUNDLE_DATA += RESOURCE_FILES
+}
+
 # Imgur API data
 include(src/imgur.pri)
